@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-950: #072520;
+  --color-primary-900: #0B3D36;
+  --color-primary-800: #0F5C4D;
+  --color-primary-700: #147A66;
+  --color-primary-600: #1B9B82;
+  --color-primary-500: #23BCA0;
+  --color-primary-100: #E6F4F1;
+  --color-primary-50: #F0F8F6;
+
+  --color-emerald-accent: #1FA971;
+  --color-emerald-accent-hover: #178B5C;
+  --color-emerald-accent-light: #E8F7F0;
+
+  --color-amber-accent: #F5A524;
+  --color-amber-accent-hover: #E09015;
+  --color-amber-accent-light: #FEF7EC;
+
+  --color-mist-bg: #F4F8F7;
+  --color-mist-surface: #EAF1EF;
+  --color-dark-bg: #071513;
+  --color-dark-surface: #0E2420;
+  --color-dark-border: #183C34;
+  --color-text-main: #0B1F1C;
+
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
+}
+
+:root {
+  --bg-app: #F4F8F7;
+  --bg-card: #FFFFFF;
+  --border-card: #E2ECE9;
+  --text-primary: #0B1F1C;
+  --text-muted: #4A635E;
+}
+
+.dark {
+  --bg-app: #071513;
+  --bg-card: #0E2420;
+  --border-card: #183C34;
+  --text-primary: #F4F8F7;
+  --text-muted: #96B5AF;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Urdu Typography & RTL Enhancements */
+[dir="rtl"] {
+  font-family: var(--font-urdu), var(--font-body);
+  line-height: 2.1;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  font-family: var(--font-urdu);
+  line-height: 2;
+}
+
+/* Mountain Mist subtle backdrop gradient */
+.bg-mountain-gradient {
+  background: radial-gradient(120% 80% at 50% 0%, rgba(31, 169, 113, 0.12) 0%, rgba(15, 92, 77, 0.05) 50%, transparent 100%);
+}
+
+.dark .bg-mountain-gradient {
+  background: radial-gradient(120% 80% at 50% 0%, rgba(31, 169, 113, 0.18) 0%, rgba(11, 61, 54, 0.25) 60%, transparent 100%);
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 92, 77, 0.08);
+}
+
+.dark .glass-panel {
+  background: rgba(14, 36, 32, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1FA97140;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1FA97180;
+}
